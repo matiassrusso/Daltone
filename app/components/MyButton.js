@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, TouchableOpacity} from 'react-native'
 import { mainStyles } from '@styles/styles'
-import color from '@styles/colors'
+import color from '@styles/Colors'
 import { sub } from 'react-native-reanimated'
 
 function MyButton(props){
