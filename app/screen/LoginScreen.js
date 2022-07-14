@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { StatusBar, Text, View, TouchableOpacity, Image } from 'react-native'
 //import { View } from 'react-native-animatable'
 //import { TouchableOpacity } from 'react-native-gesture-handler'
