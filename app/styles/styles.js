@@ -23,6 +23,13 @@ const mainStyles = StyleSheet.create({
         fontFamily: "Poppins-SemiBold"
     },
 
+    nuevoText: {
+        fontSize: 28,
+        marginTop: 20,
+        color: color.BLUE,
+        fontFamily: "Poppins-SemiBold"
+    },
+
     btnMain: {
         width: 280,
         marginTop: 40,

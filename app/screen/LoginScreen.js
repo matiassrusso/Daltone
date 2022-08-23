@@ -41,12 +41,12 @@ export default function LoginScreen(props) {
                 onPress={() => goToScreen('Registro')}
             />
             <View>
-                <TouchableOpacity onPress={() => goToScreen(props, 'RecuperarPassword')}>
+                <TouchableOpacity onPress={() => goToScreen('RecuperarPassword')}>
                     <Text style={[mainStyles.txtTransparent, { fontWeight: 'bold', textDecorationLine: 'underline', marginBottom: 10, }]}>Olvide mi contraseña</Text>
                 </TouchableOpacity>
             </View>
             <View style={mainStyles.btnMVP}>
-                <TouchableOpacity onPress={() => goToScreen(props, 'MVP')}>
+                <TouchableOpacity onPress={() => goToScreen('MVP')}>
                     <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 14, alignItems: 'center', }]}>Ir al MVP</Text>
                 </TouchableOpacity>
             </View>
