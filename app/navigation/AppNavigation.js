@@ -9,6 +9,7 @@ import RegistroScreen from "@screen/RegistroScreen";
 import MVPScreen from "@screen/MVPScreen";
 import SastreScreen from "@screen/SastreScreen";
 import NicoScreen from "@screen/NicoScreen";
+import TestScreen from "@screen/TestScreen";
 
 
 
@@ -57,6 +58,12 @@ const AppNavigation = createStackNavigator({
     },
     Sastre:{
         screen: SastreScreen,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    Test:{
+        screen: TestScreen,
         navigationOptions:{
             headerShown: false,
         }

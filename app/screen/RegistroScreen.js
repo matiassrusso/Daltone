@@ -30,7 +30,7 @@ export default function RegistroScreen(props) {
                 onPressLeft={() => goToScreen(props, 'Login')}
                 iconLeft={require('@recursos/images/back.png')} />
             <View style={[mainStyles.container, { padding: 50 }]}>
-                <Text style={mainStyles.titleText}> Crear{"\n"}cuenta</Text>
+                <Text style={mainStyles.leftText}> Crear{"\n"}cuenta</Text>
                 <MyTextInput placeholder='Nombre de usuario' image='user' />
                 <MyTextInput placeholder='Apellidos' image='user' />
                 <MyTextInput keyboardType='email-address' placeholder='E-mail'

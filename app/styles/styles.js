@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 import color from './Colors'
+
 
 //Estilos para MainScreen
 const mainStyles = StyleSheet.create({
@@ -23,10 +24,10 @@ const mainStyles = StyleSheet.create({
         fontFamily: "Poppins-SemiBold"
     },
 
-    nuevoText: {
-        fontSize: 28,
+    leftText: {
+        fontSize: 48,
         marginTop: 20,
-        color: color.BLUE,
+        color: color.BLACK,
         fontFamily: "Poppins-SemiBold"
     },
 

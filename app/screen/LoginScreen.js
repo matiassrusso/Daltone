@@ -27,6 +27,7 @@ export default function LoginScreen(props) {
             </View>
             <MyTextInput keyboardType="email-address" placeholder='E-mail' image='user'
                 value={email} onChangeText={(email) => setEmail(email)} />
+                
             <MyTextInput keyboardType={null} placeholder='Contraseña' image='lock'
                 bolGone={true} secureTextEntry={hidepassword}
                 onPress={() => sethidepassword(!hidepassword)}
