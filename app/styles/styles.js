@@ -36,13 +36,13 @@ const mainStyles = StyleSheet.create({
         marginTop: 40,
         marginBottom: 20,
         alignItems: 'center',
-        backgroundColor: color.BLUE,
+        backgroundColor: color.BLACK,
         borderRadius: 60
     },
 
     btnTransparent: {
         backgroundColor: 'rgba(52, 52, 52, 0)',
-        borderColor: color.BLUE,
+        borderColor: color.BLACK,
         width: 280,
         borderWidth: 2,
         marginBottom: 20,
@@ -59,7 +59,7 @@ const mainStyles = StyleSheet.create({
 
     btnMVP: {
         backgroundColor: color.WHITE,
-        borderColor: color.BLUE,
+        borderColor: color.BLACK,
         color: color.WHITE,
         width: 100,
         fontSize: 11,

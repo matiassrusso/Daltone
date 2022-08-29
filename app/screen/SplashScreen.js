@@ -21,7 +21,7 @@ export default function SplashScreen(props) {
 
         return (
             <View style={imageBackgroundStyle.image}>
-                <StatusBar translucent backgroundColor='rgba(0,0,0,1)' />
+                <StatusBar translucent backgroundColor='black' />
                 <Animatable.Image
                     animation="pulse"
                     easing="ease-out"
@@ -43,7 +43,7 @@ export default function SplashScreen(props) {
 
             if (response == null){
                 setTimeout(()=>{
-                    goToScreen('Registro')
+                    goToScreen('Login')
                 }, 3000)
                 return
             }

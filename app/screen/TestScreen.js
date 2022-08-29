@@ -26,6 +26,7 @@ export default function LoginScreen(props) {
             <MyButton
                 titulo='Siguiente imagen'
                 onPress={() => goToScreen('Sastre')}/>
+                
            
 
 

@@ -6,7 +6,7 @@ import { sub } from 'react-native-reanimated'
 
 function MyButton(props){
     const sButton = props.transparent?mainStyles.btnTransparent:mainStyles.btnMain
-    const sText = props.transparent?{color: color.BLUE}: null
+    const sText = props.transparent?{color: color.BLACK}: null
 
     return(
         <TouchableOpacity style={[sButton, props.style]}

@@ -18,7 +18,7 @@ export default function LoginScreen(props){
             <View style={[mainStyles.container,{padding: 200}]}>
                 
                 <View style = {mainStyles.btnTransparent}>
-                <TouchableOpacity onPress={()=> goToScreen(props, 'Nico')}>
+                <TouchableOpacity onPress={()=> goToScreen(props, 'Test2')}>
                     <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir a lo de Nico</Text>
                     </TouchableOpacity>
                 </View>
