@@ -4,7 +4,6 @@ import * as Animatable from 'react-native-animatable'
 import { imageBackgroundStyle } from '@styles/General'
 import { getUsuario } from '@storage/UsuarioAsyncStorage'
 import { UsuarioContext } from '@context/UsuarioContext'
-import { splashStyles } from '@styles/styles'
 
 
 

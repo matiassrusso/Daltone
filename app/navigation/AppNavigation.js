@@ -10,7 +10,7 @@ import MVPScreen from "@screen/MVPScreen";
 import SastreScreen from "@screen/SastreScreen";
 import NicoScreen from "@screen/NicoScreen";
 import TestScreen from "@screen/TestScreen";
-import test from "@screen/test";
+import Test2 from "@screen/Test2";
 
 
 
@@ -70,7 +70,7 @@ const AppNavigation = createStackNavigator({
         }
     },
     Test2:{
-        screen: test,
+        screen: Test2,
         navigationOptions:{
             headerShown: false,
         }

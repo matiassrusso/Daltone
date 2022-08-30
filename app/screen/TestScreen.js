@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react'
-import { StatusBar, Text, View, TouchableOpacity, Image } from 'react-native'
-//import { View } from 'react-native-animatable'
-//import { TouchableOpacity } from 'react-native-gesture-handler'
-//import { color } from 'react-native-reanimated'
+import { StatusBar, Text, View, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import { mainStyles, loginStyles } from '@styles/styles'
 import MyButton from '@components/MyButton'
 import { UsuarioContext } from '@context/UsuarioContext'
 import MyTextInput from '@components/MyTextInput'
 import color from '@styles/Colors'
-//import RecuperarPasswordScreen from './RecuperarPasswordScreen'
+import { fontSize } from 'styled-system'
 
 
 
@@ -17,6 +14,7 @@ export default function LoginScreen(props) {
 
     return (
         <View style={[mainStyles.container, { padding: 25 }]}>
+            <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
             <StatusBar backgroundColor={color.BLACK} translucent={true} />
             <View style={[loginStyles.logo, { padding: 40 }]}>
                 <Image source={require('@recursos/images/cristina.jpg')}
@@ -25,7 +23,7 @@ export default function LoginScreen(props) {
             <MyTextInput keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user'/>
             <MyButton
                 titulo='Siguiente imagen'
-                onPress={() => goToScreen('Sastre')}/>
+                onPress={() => goToScreen('Test2')}/>
                 
            
 

@@ -21,14 +21,14 @@ const mainStyles = StyleSheet.create({
         fontSize: 28,
         marginTop: 20,
         color: color.BLUE,
-        fontFamily: "Poppins-SemiBold"
+        fontFamily: "Nunito-SemiBold"
     },
 
     leftText: {
         fontSize: 48,
         marginTop: 20,
         color: color.BLACK,
-        fontFamily: "Poppins-SemiBold"
+        fontFamily: "Nunito-SemiBold"
     },
 
     btnMain: {
@@ -54,7 +54,7 @@ const mainStyles = StyleSheet.create({
         fontSize: 17,
         color: color.WHITE,
         paddingVertical: 15,
-        fontFamily: 'Poppins-Bold',
+        fontFamily: 'Nunito-Bold',
     },
 
     btnMVP: {
@@ -72,7 +72,7 @@ const mainStyles = StyleSheet.create({
     txtTransparent: {
         color: color.LIGHTPRIMARYCOLOR,
         fontSize: 14,
-        fontFamily: 'Poppins-Light',
+        fontFamily: 'Nunito-Light',
     }
     
 })

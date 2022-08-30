@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Text, View, TouchableOpacity, StatusBar, Alert, BackHandler } from 'react-native'
-import { mainStyles } from '@styles/styles'
 import color from '@styles/Colors'
 import { UsuarioContext } from '@context/UsuarioContext'
 import MyButton from '@components/MyButton'
@@ -31,7 +30,7 @@ export default function PrincipalScreen(props) {
                 translucent={true}
             />
 
-            <Text style={{ color: 'black', fontSize: 64, textAlign: 'center', marginTop: 200, fontFamily: 'Poppin-Bold' }}> Bienvenido{'\n' + login.usuario.email}</Text>
+            <Text style={{ color: 'black', fontSize: 64, textAlign: 'center', marginTop: 200, fontFamily: 'Nunito-Bold' }}> Bienvenido{'\n' + login.usuario.email}</Text>
             <MyButton
                 titulo='Cerrar sesion'
                 onPress={() => desconectarse()}

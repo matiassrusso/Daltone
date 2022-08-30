@@ -12,7 +12,7 @@ export default function MyTextInput(props){
         inputStyle={{ fontSize:18,paddingVertical: 10,
             paddingHorizontal:8, marginTop:12,
             color: color.PRIMARYCOLOR,
-            fontFamily:"Poppins-Light",}}
+            fontFamily:"Nunito-Regular",}}
         placeholderTextColor={color.LIGHTPRIMARYCOLOR}
         placeholder={props.placeholder}
         leftIconContainerStyle={{ marginLeft:0 }}

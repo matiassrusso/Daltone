@@ -7,7 +7,7 @@ export default function ToolBar(props){
     return (
         <View style={[props.style, { height: 64, marginTop: 24, backgroundColor: color.PRIMARYCOLOR }]}>
             {props.titulo && 
-                <Text style={{ fontFamily: "Poppins-Medium", 
+                <Text style={{ fontFamily: "Nunito-Medium", 
                     marginTop: 12, textAlign: 'center', fontSize: 25, 
                     color: color.WHITE }}>{props.titulo}
                 </Text>

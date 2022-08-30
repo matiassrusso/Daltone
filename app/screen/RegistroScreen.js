@@ -25,11 +25,11 @@ export default function RegistroScreen(props) {
             keyboardDismissMode='on-drag'
             keyboardShouldPersistTaps='always'
             style={{ backgroundColor: color.BLACK }}>
-            <StatusBar backgroundColor={color.BLUE} translucent={true} />
+            <StatusBar backgroundColor={color.BLACK} translucent={false} />
             <ToolBar titulo='Crear cuenta'
                 onPressLeft={() => goToScreen(props, 'Login')}
                 iconLeft={require('@recursos/images/back.png')} />
-            <View style={[mainStyles.container, { padding: 50 }]}>
+            <View style={[mainStyles.container, { padding: 25 }]}>
                 <Text style={mainStyles.leftText}> Crear{"\n"}cuenta</Text>
                 <MyTextInput placeholder='Nombre de usuario' image='user' />
                 <MyTextInput placeholder='Apellidos' image='user' />
