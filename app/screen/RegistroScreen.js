@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-    Text,
-    View,
-    TouchableOpacity,
-    StatusBar,
-    ScrollView
-} from 'react-native'
+import {Text,View,TouchableOpacity,StatusBar,ScrollView} from 'react-native'
 import { mainStyles, registroStyles } from '@styles/styles'
 import MyTextInput from '@components/MyTextInput'
 import ToolBar from '@components/ToolBar'

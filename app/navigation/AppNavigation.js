@@ -11,6 +11,7 @@ import SastreScreen from "@screen/SastreScreen";
 import NicoScreen from "@screen/NicoScreen";
 import TestScreen from "@screen/TestScreen";
 import Test2 from "@screen/Test2";
+import nasheScreen from "@screen/nasheScreen"
 
 
 
@@ -71,6 +72,12 @@ const AppNavigation = createStackNavigator({
     },
     Test2:{
         screen: Test2,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    Nashe:{
+        screen: nasheScreen,
         navigationOptions:{
             headerShown: false,
         }

@@ -10,11 +10,45 @@ const mainStyles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: color.WHITE
     },
+    container2: {
+        flex: 1,
+        backgroundColor: '#00000',
+        paddingLeft: 30,
+    
+      },
 
     containerCenter: {
         paddingTop: 10,
         alignItems: 'center',
         marginBottom: 25,
+    },
+    containerLeft: {
+        paddingTop: 10,
+        alignItems: 'left',
+        marginBottom: 25,
+    },
+    subContainer: {
+        ...StyleSheet.absoluteFillObject,
+        alignItems: 'center',
+        justifyContent: 'center',
+        
+      },
+    inputView: {
+        width: '90%',
+        backgroundColor: '#DFDFDF',
+        borderRadius: 25,
+        height: 60,
+        marginBottom: 40,
+        justifyContent: 'center',
+        padding: 20,
+        paddingLeft: 30,
+      },
+      inputText: {
+        height: 50,
+        color: 'black',
+        fontFamily: 'Nunito-light',
+        fontSize:22,
+        right: 20,
     },
 
     titleText: {
@@ -25,11 +59,22 @@ const mainStyles = StyleSheet.create({
     },
 
     leftText: {
-        fontSize: 48,
-        marginTop: 20,
+        fontSize: 72,
+        marginTop: 50,
         color: color.BLACK,
-        fontFamily: "Nunito-SemiBold"
+        fontFamily: "Nunito-Regular"
     },
+    inicioText :{
+        color: 'black',
+        fontSize: 20,
+        fontFamily: 'Nunito-light',
+    
+      },
+      loginText: {
+        color: 'black',
+        fontSize: 30,
+        fontFamily: 'Nunito-light',
+      },
 
     btnMain: {
         width: 280,
@@ -38,6 +83,40 @@ const mainStyles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: color.BLACK,
         borderRadius: 60
+    },
+    loginBtn: {
+        width: '65%',
+        backgroundColor: '#9289FF',
+        borderRadius: 25,
+        height: 55,
+        alignItems: 'center',
+        display: 'flex', 
+        justifyContent: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+      fontFamily: 'Nunito-Bold',
+      left: 50,
+    
+      },
+      
+
+    roundButton: {
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: color.BLACK,
+    },
+    roundTrasparent: {
+        width: 100,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 100,
+        backgroundColor: color.BLACK,
     },
 
     btnTransparent: {

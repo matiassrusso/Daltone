@@ -35,7 +35,7 @@ export default function LoginScreen(props) {
             <MyButton
                 transparent={true}
                 titulo='Registrarse'
-                onPress={() => goToScreen('Registro')}
+                onPress={() => goToScreen('Nashe')}
             />
             <View>
                 <TouchableOpacity onPress={() => goToScreen('RecuperarPassword')}>
@@ -43,7 +43,7 @@ export default function LoginScreen(props) {
                 </TouchableOpacity>
             </View>
             <View style={mainStyles.btnMVP}>
-                <TouchableOpacity onPress={() => goToScreen('MVP')}>
+                <TouchableOpacity onPress={() => goToScreen('Test2')}>
                     <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 14, alignItems: 'center', }]}>Ir al MVP</Text>
                 </TouchableOpacity>
             </View>
