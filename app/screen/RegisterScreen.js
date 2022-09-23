@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {StyleSheet,Text,View,TextInput,TouchableOpacity,Image,} from 'react-native';
+import { CheckBox, SocialIcon, Button } from 'react-native-elements'
 import color from '@styles/Colors'
 import { mainStyles, loginStyles } from '@styles/styles'
 import ToolBar from '@components/ToolBar'
@@ -8,9 +9,6 @@ import { Center } from 'native-base';
 import { flex } from 'styled-system';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-
-
 
 
 export default function App (props) {
@@ -25,9 +23,9 @@ export default function App (props) {
   
     return (
 <View style={[styles.container, { padding: 0 }]}>
-          <View style={styles.containerLeft}>
-          <Text style={[mainStyles.leftText, { paddingBottom: 30 }]}>Crear{"\n"}cuenta </Text>
-          <View style={styles.inputView}>
+          <View style={[styles.containerLeft,]}>
+          <Text style={[mainStyles.leftText, { paddingBottom: 23, }]}>Crear{"\n"}cuenta </Text>
+          <View style={[styles.inputView, {paddingTop:25}]}>
             <TextInput
               style={styles.inputText}
               placeholder="Nombre de usuario"
@@ -36,7 +34,7 @@ export default function App (props) {
             />
             
           </View>
-          <View style={styles.inputView}>
+          <View style={[styles.inputView, {paddingTop:25,}]}>
             <TextInput
               style={styles.inputText}
               placeholder="E-mail"
@@ -46,7 +44,7 @@ export default function App (props) {
             />
             
           </View>
-          <View style={styles.inputView}>
+          <View style={[styles.inputView, {paddingTop:25}]}>
             <TextInput
               style={styles.inputText}
               placeholder="Contraseña"
@@ -55,7 +53,7 @@ export default function App (props) {
             />
             
           </View>
-          <View style={styles.inputView}>
+          <View style={[styles.inputView, {paddingTop:25}]}>
             <TextInput
               secureTextEntry
               style={styles.inputText}
@@ -74,9 +72,11 @@ export default function App (props) {
             <Text style={styles.loginText}>Siguiente</Text>
           </TouchableOpacity>
           </View>
-          <TouchableOpacity>
-            <Text style={styles.inicioText}>Ya tienes cuenta?</Text> 
-            <Text style={[styles.inicioText,{color: '#0066CC'},{textDecorationLine: 'underline'}]}>Inicia sesion</Text>
+          
+            <Text style={[styles.inicioText,{paddingTop: 10},{left:10,}]}>Ya tengo cuenta</Text> 
+            <TouchableOpacity
+              onPress={() => goToScreen('Login')}>
+            <Text style={[styles.inicioText,{color: '#0066CC'},{textDecorationLine: 'underline'}, {left:185},{bottom:31}]}>Iniciar sesion</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
   },
   inputView: {
     width: '90%',
-    backgroundColor: '#DFDFDF',
-    borderRadius: 25,
+    backgroundColor: '#D9D9D9',
+    borderRadius: 35,
     height: 60,
-    marginBottom: 40,
+    marginBottom: 35,
     justifyContent: 'center',
     padding: 20,
     paddingLeft: 30,
@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
     height: 50,
     color: 'black',
     fontFamily: 'Nunito-light',
-    fontSize:22,
-    right: 20,
+    fontSize:24,
+    right: 17,
 },
 
   forgot: {
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   inicioText :{
     color: 'black',
-    fontSize: 20,
+    fontSize: 23,
     fontFamily: 'Nunito-light',
 
   },

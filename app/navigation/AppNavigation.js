@@ -11,7 +11,9 @@ import SastreScreen from "@screen/SastreScreen";
 import NicoScreen from "@screen/NicoScreen";
 import TestScreen from "@screen/TestScreen";
 import Test2 from "@screen/Test2";
-import nasheScreen from "@screen/nasheScreen"
+import RegisterScreen from "@screen/RegisterScreen"
+import InicioScreen from "@screen/InicioScreen"
+import ContactoScreen from "@screen/ContactoScreen"
 
 
 
@@ -76,12 +78,26 @@ const AppNavigation = createStackNavigator({
             headerShown: false,
         }
     },
-    Nashe:{
-        screen: nasheScreen,
+    Register:{
+        screen: RegisterScreen,
         navigationOptions:{
             headerShown: false,
         }
     },
+    Inicio:{
+        screen: InicioScreen,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    
+    Contacto:{
+        screen: ContactoScreen,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    
 })
 
 export default createAppContainer(AppNavigation)

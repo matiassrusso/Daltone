@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text } from 'react-native'
+import { borderRadius } from 'styled-system'
 import color from './Colors'
 
 
@@ -62,7 +63,24 @@ const mainStyles = StyleSheet.create({
         fontSize: 72,
         marginTop: 50,
         color: color.BLACK,
-        fontFamily: "Nunito-Regular"
+        fontFamily: "Nunito-SemiBold",
+        bottom:15, 
+        right: 10,
+    },
+    normalText: {
+        fontSize: 61,
+        marginTop: 60,
+        color: color.BLACK,
+        fontFamily: "Nunito-SemiBold"
+    },
+    logText: {
+        fontSize: 61,
+        marginTop: 50,
+        left: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: color.BLACK,
+        fontFamily: "Nunito-SemiBold"
     },
     inicioText :{
         color: 'black',
@@ -199,6 +217,28 @@ const registroStyles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 60,
     },
+    socialButton: {
+        width: 325,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        height: 60,
+        alignItems: 'center',
+        display: 'flex', 
+        justifyContent: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+        fontFamily: 'Nunito-Bold',
+        borderColor:'pink',
+        border: 20,
+      },
+
+      socialText: {
+        color: 'black',
+        fontSize: 14,
+        fontFamily: 'Nunito-Bold',
+        left:14,
+      },
+      
 })
 
 export { mainStyles, splashStyles, loginStyles, registroStyles }

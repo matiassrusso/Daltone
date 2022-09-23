@@ -35,7 +35,7 @@ export default function LoginScreen(props) {
             <MyButton
                 transparent={true}
                 titulo='Registrarse'
-                onPress={() => goToScreen('Nashe')}
+                onPress={() => goToScreen('Register')}
             />
             <View>
                 <TouchableOpacity onPress={() => goToScreen('RecuperarPassword')}>

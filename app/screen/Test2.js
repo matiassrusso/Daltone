@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView, StatusBar} from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native';
 import MyTextInput from '@components/MyTextInput'
 import MyButton from '@components/MyButton'
 import color from '@styles/Colors'
@@ -12,58 +12,100 @@ export default function App(props) {
   const [loading, setLoading] = useState(true)
   const [imageIndex, setImageIndex] = useState(0)
   const [numeroElegido, setNumeroElegido] = useState(null)
+  const [numerosElegidos, setNumerosElegidos] = useState([])
+
+  const numImagen = 0
 
 
 
-  const url = "https://337e-2800-2147-f400-396-fcea-8132-d80-77b7.sa.ngrok.io/api/show-tests?type=allRecords"
+
+  const url = "https://a1f5-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
 
 
   useEffect(() => {
-    if (loading){
+    if (loading) {
 
-    
-    fetch(url)
-      .then(response => response.json())
-      .then((json) => setData(json))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false))
+
+      fetch(url)
+        .then(response => response.json())
+        .then((json) => setData(json))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false))
     }
-    }, [loading])
+  }, [loading])
 
-    const loadImage = ()=> {setLoading(true)}
-    
-    function siguienteImagen(){
-      if(imageIndex !== data.length - 1){
+  const loadImage = () => { setLoading(true) }
+
+  //Guardar en una variable el id
+
+  function siguienteImagen(num_usuario) {
+    enviarDatos(num_usuario)
+    if (imageIndex !== data.length - 1) {
       setImageIndex(imageIndex + 1)
-      }
-      }
-    
+     //setNumerosElegidos.p(numeroElegido)
+     this.numImagen = imageIndex + 1 
+      setNumeroElegido(null)
+    }
+  }
+  function enviarDatos(num_usuario) {
+
+    //Tiene que recibir 3 parametros
+    //fetch('https://a1f5-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=4(<== aca hay que concatenar) &num_ing=7(<== aca tmb)'
+    //Tengo que hacer que sean variables. Que cambien segun lo que se lea.
+
+    //setNumerosElegidos.push(numeroElegido)
+    fetch('https://320f-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id='+ this.numImagen +'&num_ing='+ num_usuario, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        usuario: [numerosElegidos]
+
+      })
+    });
+  }
+
   return (
-    
+
+
+
+
+
     <SafeAreaView>
-      
+
       <ScrollView>
-      <View style={[mainStyles.container, { padding: 25 }]}>
-            <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
-            <StatusBar backgroundColor={color.BLACK} translucent={true} />
+        <View style={[mainStyles.container, { padding: 25 }]}>
+          <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
+          <StatusBar backgroundColor={color.BLACK} translucent={true} />
 
           {
-              data.length > 0 && 
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                  <Image source={{ uri: `data:image/jpg;base64,${data[imageIndex].img_testeo}` }}
-                    style={{ width: 100, height: 100 }} />
-                </View>
-              
+            data.length > 0 &&
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <Image source={{ uri: `data:image/jpg;base64,${data[imageIndex].img_testeo}` }}
+                style={{ width: 100, height: 100 }} />
+            </View>
+
           }
-          <MyTextInput keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user'/>
-         {
-          imageIndex !== data.length -1 ? 
-          <MyButton
-          titulo='Siguiente imagen'
-          onPress={() => siguienteImagen()}/> : <MyButton
-          titulo='Finalizar'
-          onPress={() => goToScreen('Login')}/>
-         }
+          <MyTextInput onChangeText={(text) => setNumeroElegido(text)} keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user' />
+          
+          {/* enviarDatos(setNumeroElegido) */}
+
+          {
+            imageIndex !== data.length - 1 ?
+
+              //1. Guardar el input del numero ingresado
+              //Llamar a la funcion "enviar datos" con 3 parametros: Usuario, ID, numero ingresado
+
+
+
+              <MyButton
+                titulo='Siguiente imagen'
+                onPress={() => siguienteImagen(setNumeroElegido)} /> : <MyButton
+                titulo='Finalizar'
+                onPress={() => goToScreen('Login')} />
+          }
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -73,10 +115,9 @@ export default function App(props) {
 
   )
 
-
-function goToScreen(routeName) {
-  props.navigation.navigate(routeName)
-}
+  function goToScreen(routeName) {
+    props.navigation.navigate(routeName)
+  }
 }
 
 const styles = StyleSheet.create({

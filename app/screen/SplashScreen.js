@@ -42,7 +42,7 @@ export default function SplashScreen(props) {
 
             if (response == null){
                 setTimeout(()=>{
-                    goToScreen('Login')
+                    goToScreen('Inicio')
                 }, 1500)
                 return
             }
