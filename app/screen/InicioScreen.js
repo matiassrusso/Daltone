@@ -55,7 +55,7 @@ export default function App(props) {
 
         <View style={[styles.loginBtn]}>
           <TouchableOpacity
-            onPress={() => goToScreen('Login')}>
+            onPress={() => goToScreen('MVP')}>
             <Text style={styles.loginText}>Iniciar sesion</Text>
           </TouchableOpacity>
         </View>

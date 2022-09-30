@@ -1,7 +1,6 @@
 import React, {Component, useState} from 'react'
 import { StatusBar, Text, View, TouchableOpacity, Image } from 'react-native'
 import { mainStyles, loginStyles } from '@styles/styles'
-import MyTextInput from '@components/MyTextInput'
 import color from '@styles/Colors'
 
 function goToScreen(props, routeName){
@@ -11,24 +10,23 @@ function goToScreen(props, routeName){
 export default function LoginScreen(props){
 
         return(
-            <View style={[mainStyles.container,{padding: 200}]}>
-                
-                <View style = {mainStyles.btnTransparent}>
-                <TouchableOpacity onPress={()=> goToScreen(props, 'Test2')}>
-                    <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir a lo de Nico</Text>
+            <View style={[mainStyles.container,{paddingTop: 50}]}>
+                <Text style={ [mainStyles.titleText,{paddingBottom: 50,}]}>Bienvenido a {'\n'}DALTONE</Text>
+                {/* <View style = {[mainStyles.btnTransparent, {}]}>
+                <TouchableOpacity onPress={()=> goToScreen(props, 'Test')}>
+                    <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir al test</Text>
                     </TouchableOpacity>
                 </View>
                 <View style = {mainStyles.btnTransparent}>
-                    <TouchableOpacity onPress={()=> goToScreen(props, 'Sastre')}>
-                        <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir a lo de Sas</Text>
+                    <TouchableOpacity onPress={()=> goToScreen(props, 'MVP')}>
+                        <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir al MVP</Text>
                     </TouchableOpacity>
                 </View>
                 <View style = {mainStyles.btnTransparent}>
-                    <TouchableOpacity onPress={()=> goToScreen(props, 'Inicio')}>
+                    <TouchableOpacity onPress={()=> goToScreen(props, 'Login')}>
                         <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Volver a inicio</Text>
                     </TouchableOpacity>
-                </View>
-            
+                </View> */}
 
 
             </View>

@@ -67,7 +67,7 @@ export default function App (props) {
           </TouchableOpacity> */}
           <View style={[styles.loginBtn]}>
           <TouchableOpacity
-          onPress={() => goToScreen('Login')}>
+          onPress={() => goToScreen('Inicio')}>
 
             <Text style={styles.loginText}>Siguiente</Text>
           </TouchableOpacity>
@@ -75,7 +75,7 @@ export default function App (props) {
           
             <Text style={[styles.inicioText,{paddingTop: 10},{left:10,}]}>Ya tengo cuenta</Text> 
             <TouchableOpacity
-              onPress={() => goToScreen('Login')}>
+              onPress={() => goToScreen('Inicio')}>
             <Text style={[styles.inicioText,{color: '#0066CC'},{textDecorationLine: 'underline'}, {left:185},{bottom:31}]}>Iniciar sesion</Text>
           </TouchableOpacity>
         </View>

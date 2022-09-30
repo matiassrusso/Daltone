@@ -30,7 +30,8 @@ export default function LoginScreen(props) {
                 value={password} onChangeText={(password) => setPassword(password)} />
             <MyButton
                 titulo='Iniciar sesion'
-                onPress={() => iniciarSesion()}
+                //onPress={() => iniciarSesion()}
+                onPress={() => goToScreen('Inicio')}
             />
             <MyButton
                 transparent={true}

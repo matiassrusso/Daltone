@@ -14,6 +14,7 @@ import Test2 from "@screen/Test2";
 import RegisterScreen from "@screen/RegisterScreen"
 import InicioScreen from "@screen/InicioScreen"
 import ContactoScreen from "@screen/ContactoScreen"
+import BienvenidoScreen from "@screen/BienvenidoScreen"
 
 
 
@@ -93,6 +94,12 @@ const AppNavigation = createStackNavigator({
     
     Contacto:{
         screen: ContactoScreen,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    Bienvenido:{
+        screen: BienvenidoScreen,
         navigationOptions:{
             headerShown: false,
         }

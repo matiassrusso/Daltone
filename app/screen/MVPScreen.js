@@ -15,17 +15,22 @@ export default function LoginScreen(props){
                 
                 <View style = {mainStyles.btnTransparent}>
                 <TouchableOpacity onPress={()=> goToScreen(props, 'Test2')}>
-                    <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir a lo de Nico</Text>
+                    <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Camara</Text>
                     </TouchableOpacity>
                 </View>
                 <View style = {mainStyles.btnTransparent}>
                     <TouchableOpacity onPress={()=> goToScreen(props, 'Sastre')}>
-                        <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Ir a lo de Sas</Text>
+                        <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Pag Infor</Text>
                     </TouchableOpacity>
                 </View>
                 <View style = {mainStyles.btnTransparent}>
                     <TouchableOpacity onPress={()=> goToScreen(props, 'Login')}>
                         <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Volver a inicio</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style = {mainStyles.btnTransparent}>
+                    <TouchableOpacity onPress={()=> goToScreen(props, 'Contacto')}>
+                        <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Pag Contacto</Text>
                     </TouchableOpacity>
                 </View>
             

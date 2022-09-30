@@ -8,8 +8,8 @@ const mainStyles = StyleSheet.create({
 
     container: {
         flex: 1,
-        alignItems: 'center',
-        backgroundColor: color.WHITE
+        alignItems:'center',
+        backgroundColor: 'white',
     },
     container2: {
         flex: 1,
@@ -22,6 +22,8 @@ const mainStyles = StyleSheet.create({
         paddingTop: 10,
         alignItems: 'center',
         marginBottom: 25,
+        backgroundColor: 'white',
+
     },
     containerLeft: {
         paddingTop: 10,
@@ -53,10 +55,12 @@ const mainStyles = StyleSheet.create({
     },
 
     titleText: {
-        fontSize: 28,
+        fontSize: 48,
         marginTop: 20,
-        color: color.BLUE,
-        fontFamily: "Nunito-SemiBold"
+        justifyContent:'center',
+        color: 'black',
+        //alignItems: 'center',
+        fontFamily: "Nunito-Bold"
     },
 
     leftText: {
