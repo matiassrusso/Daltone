@@ -86,6 +86,21 @@ const mainStyles = StyleSheet.create({
         color: color.BLACK,
         fontFamily: "Nunito-SemiBold"
     },
+    unoText: {
+        marginTop: 50,
+        left: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: color.BLACK,
+        fontFamily: "Nunito-SemiBold"
+    },
+    dosText: {
+        color: 'black',
+        fontSize: 30,
+        fontFamily: 'Nunito-light',
+        fontStyle: 'normal'
+      },
+    
     inicioText :{
         color: 'black',
         fontSize: 20,
@@ -169,6 +184,19 @@ const mainStyles = StyleSheet.create({
         //marginBottom: 100,
         borderRadius: 25
     },
+    loginBtn: {
+        width: '80%',
+        backgroundColor: '#9289FF',
+        borderRadius: 25,
+        height: 55,
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+        fontFamily: 'Nunito-Regular',
+        //left: 20,
+      },
 
     txtTransparent: {
         color: color.LIGHTPRIMARYCOLOR,

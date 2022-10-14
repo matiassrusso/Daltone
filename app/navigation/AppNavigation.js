@@ -18,6 +18,7 @@ import BienvenidoScreen from "@screen/BienvenidoScreen"
 
 
 
+
 const AppNavigation = createStackNavigator({
     Splash:{
         screen: SplashScreen,
@@ -104,7 +105,7 @@ const AppNavigation = createStackNavigator({
             headerShown: false,
         }
     },
-    
+   
 })
 
 export default createAppContainer(AppNavigation)
