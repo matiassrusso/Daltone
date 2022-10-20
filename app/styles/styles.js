@@ -197,6 +197,19 @@ const mainStyles = StyleSheet.create({
         fontFamily: 'Nunito-Regular',
         //left: 20,
       },
+      otro2Btn: {
+        width: '70%',
+        backgroundColor: '#9289FF',
+        borderRadius: 25,
+        height: 55,
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+        fontFamily: 'Nunito-Regular',
+        //left: 20,
+      },
 
     txtTransparent: {
         color: color.LIGHTPRIMARYCOLOR,

@@ -16,6 +16,7 @@ export default function LoginScreen(props) {
         <View style={[mainStyles.container, { padding: 25 }]}>
             <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
             <StatusBar backgroundColor={color.BLACK} translucent={true} />
+            <Text style={[ {color: 'black', fontSize: 22 }]}>Mediante este proceso sabras si tenes daltonismos y de que tipo</Text>
             <View style={[loginStyles.logo, { padding: 40 }]}>
                 <Image source={require('@recursos/images/cristina.jpg')}
                     style={{ height: 300, width: 350 }} />

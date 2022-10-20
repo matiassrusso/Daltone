@@ -19,7 +19,7 @@ export default function LoginScreen(props){
                     </TouchableOpacity>
                 </View>
                 <View style = {mainStyles.btnTransparent}>
-                    <TouchableOpacity onPress={()=> goToScreen(props, 'Camara')}>
+                    <TouchableOpacity onPress={()=> goToScreen(props, 'Test')}>
                         <Text style={ [mainStyles.btntxt,{ color: color.BLACK}]}>Pag Infor</Text>
                     </TouchableOpacity>
                 </View>

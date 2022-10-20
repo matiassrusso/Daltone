@@ -59,7 +59,7 @@ export default function App (props) {
               style={styles.inputText}
               placeholder="Verificar contraseña"
               placeholderTextColor="#000000"
-              onChangeText={(text) => setConfirmPassword(text)}
+             // onChangeText={(text) => setConfirmPassword(text)}
             />
           </View>
           {/* <TouchableOpacity>
