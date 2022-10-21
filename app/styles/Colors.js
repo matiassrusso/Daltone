@@ -17,4 +17,5 @@ export default {
     YELLOW2: '#FFEB3B',
     DarkViolet: '#9F3782',
     PINK1: '#e80c81',
+    LBLUE:'#366BF4',
 };

@@ -31,11 +31,11 @@ export default function LoginScreen(props){
         </View>
 
         <View style={[{bottom:60}]}>
-        <Text style={[ {right:70, color: 'black', fontSize: 22 }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 27 }, {}]}>¿Ya tenes cuenta?</Text>
+        <Text style={[ {right:70, color:'black', fontSize: 22 }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 27 }, {}]}>¿Ya tenes cuenta?</Text>
 
             <TouchableOpacity
           onPress={() => goToScreen('Inicio')}>
-            <Text style={[{ left:89, color: 'blue', fontSize: 22  }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 81.4 }, {}]}>Inicia sesion</Text>
+            <Text style={[{ left:89, color: color.LBLUE, fontSize: 22  }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 81.4 }, {}]}>Inicia sesion</Text>
 
         </TouchableOpacity>
         </View>
