@@ -19,7 +19,7 @@ export default function App(props) {
 
 
 
-  const url = "https://a1f5-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
+  const url = "https://c861-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
 
 
   useEffect(() => {
@@ -50,12 +50,12 @@ export default function App(props) {
   function enviarDatos(num_usuario) {
 
     //Tiene que recibir 3 parametros
-    //fetch('https://a1f5-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=4(<== aca hay que concatenar) &num_ing=7(<== aca tmb)'
+    //fetch('https://b8af-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=4(<== aca hay que concatenar) &num_ing=7(<== aca tmb)'
     //Tengo que hacer que sean variables. Que cambien segun lo que se lea.
 
     //setNumerosElegidos.push(numeroElegido)
-    fetch('https://320f-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id='+ this.numImagen +'&num_ing='+ num_usuario, {
-      method: 'POST',
+    fetch('https://c861-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=${this.numImagen}&num_ing=${num_usuario}', {
+      method: 'POST', 
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
@@ -86,6 +86,8 @@ export default function App(props) {
               <Image source={{ uri: `data:image/jpg;base64,${data[imageIndex].img_testeo}` }}
                 style={{ width: 100, height: 100 }} />
             </View>
+
+          //Hacer un if para comparar el numero ingresado con el numero correcto, haciendolo como esta aca arriba.
 
           }
           <MyTextInput onChangeText={(text) => setNumeroElegido(text)} keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user' />
