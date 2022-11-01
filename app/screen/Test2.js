@@ -16,17 +16,13 @@ export default function App(props) {
 
   const numImagen = 0
 
-
-
-
-  const url = "https://3a1c-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
-
+  const varurl = "https://7571-181-12-251-211.sa.ngrok.io"
 
   useEffect(() => {
     if (loading) {
 
 
-      fetch(url)
+      fetch(`${varurl}/api/show-tests?type=allRecords`)
         .then(response => response.json())
         .then((json) => setData(json))
         .catch((error) => console.log(error))
@@ -56,7 +52,7 @@ export default function App(props) {
     //setNumerosElegidos.push(numeroElegido)
     console.log(numeroElegido);
 
-    fetch(`https://3a1c-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=${imageIndex}&num_ing=${num_usuario}`, {
+    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex}&num_ing=${num_usuario}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -80,7 +76,7 @@ export default function App(props) {
     <SafeAreaView>
 
       <ScrollView>
-        <View style={[mainStyles.container, { padding: 25 }]}>
+        <View style={[mainStyles.container, { paddingTop:170, paddingBottom: 2000 }]}>
           <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
           <StatusBar backgroundColor={color.BLACK} translucent={true} />
 

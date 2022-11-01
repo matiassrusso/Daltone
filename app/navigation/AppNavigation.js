@@ -15,6 +15,7 @@ import RegisterScreen from "@screen/RegisterScreen"
 import InicioScreen from "@screen/InicioScreen"
 import ContactoScreen from "@screen/ContactoScreen"
 import BienvenidoScreen from "@screen/BienvenidoScreen"
+import ResultadosTest from "@screen/ResultadosTest"
 
 
 
@@ -101,6 +102,12 @@ const AppNavigation = createStackNavigator({
     },
     Bienvenido:{
         screen: BienvenidoScreen,
+        navigationOptions:{
+            headerShown: false,
+        }
+    },
+    Resultados:{
+        screen: ResultadosTest,
         navigationOptions:{
             headerShown: false,
         }

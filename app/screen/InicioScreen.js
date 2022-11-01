@@ -73,6 +73,8 @@ export default function App(props) {
         
 
         <View style={registroStyles.containerSocial}>
+
+          <TouchableOpacity>
           <SocialIcon
             style={registroStyles.socialButton}
             title='Iniciar sesion con Google'
@@ -80,9 +82,9 @@ export default function App(props) {
             iconColor='black'
             color='black'
             light='false'
-
-
           />
+          </TouchableOpacity>
+
           <TouchableOpacity>
           <SocialIcon
             style={registroStyles.socialButton}
