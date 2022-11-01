@@ -12,14 +12,14 @@ export default function App(props) {
   const [loading, setLoading] = useState(true)
   const [imageIndex, setImageIndex] = useState(0)
   const [numeroElegido, setNumeroElegido] = useState(null)
-  const [numerosElegidos, setNumerosElegidos] = useState([])
+  // const [numerosElegidos, setNumerosElegidos] = useState([]);
 
   const numImagen = 0
 
 
 
 
-  const url = "https://c861-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
+  const url = "https://3a1c-181-12-251-211.sa.ngrok.io/api/show-tests?type=allRecords"
 
 
   useEffect(() => {
@@ -42,8 +42,8 @@ export default function App(props) {
     enviarDatos(num_usuario)
     if (imageIndex !== data.length - 1) {
       setImageIndex(imageIndex + 1)
-     //setNumerosElegidos.p(numeroElegido)
-     this.numImagen = imageIndex + 1 
+      //setNumerosElegidos.p(numeroElegido)
+      // numImagen = imageIndex + 1
       setNumeroElegido(null)
     }
   }
@@ -54,17 +54,21 @@ export default function App(props) {
     //Tengo que hacer que sean variables. Que cambien segun lo que se lea.
 
     //setNumerosElegidos.push(numeroElegido)
-    fetch('https://c861-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=${this.numImagen}&num_ing=${num_usuario}', {
-      method: 'POST', 
+    console.log(numeroElegido);
+
+    fetch(`https://3a1c-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=${imageIndex}&num_ing=${num_usuario}`, {
+      method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        usuario: [numerosElegidos]
-
-      })
-    });
+      body: JSON.stringify({})
+    }).then((response) =>
+      response.json()
+    ).then((data) => {
+      // Recibo si contesto bien o no
+      console.log(data);
+    })
   }
 
   return (
@@ -87,11 +91,11 @@ export default function App(props) {
                 style={{ width: 100, height: 100 }} />
             </View>
 
-          //Hacer un if para comparar el numero ingresado con el numero correcto, haciendolo como esta aca arriba.
+            //Hacer un if para comparar el numero ingresado con el numero correcto, haciendolo como esta aca arriba.
 
           }
           <MyTextInput onChangeText={(text) => setNumeroElegido(text)} keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user' />
-          
+
           {/* enviarDatos(setNumeroElegido) */}
 
           {
@@ -104,7 +108,7 @@ export default function App(props) {
 
               <MyButton
                 titulo='Siguiente imagen'
-                onPress={() => siguienteImagen(setNumeroElegido)} /> : <MyButton
+                onPress={() => siguienteImagen(numeroElegido)} /> : <MyButton
                 titulo='Finalizar'
                 onPress={() => goToScreen('Login')} />
           }
