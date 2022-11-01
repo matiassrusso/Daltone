@@ -34,6 +34,20 @@ export default function App(props) {
 
   //Guardar en una variable el id
 
+  //PROBAR ESTE LOOP EN VEZ DEL QUE YA USO
+  /* 
+  (rowData) => {
+    let items = [];
+    for (let i = 1; i <= 5; i++) {
+        const key = 'image' + i;
+        const uri = rowData[key];
+        if (!uri) continue;
+        items.push(<Image key={key} source={{uri: uri}} style={{width: 100, height: 100}} />);      
+    }
+    return <View>{items}</View>
+}
+  */
+
   function siguienteImagen(num_usuario) {
     enviarDatos(num_usuario)
     if (imageIndex !== data.length - 1) {
