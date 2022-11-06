@@ -16,7 +16,7 @@ export default function App(props) {
 
   const numImagen = 0
 
-  const varurl = "https://b528-181-12-251-211.sa.ngrok.io"
+  const varurl = "https://7571-181-12-251-211.sa.ngrok.io"
 
   useEffect(() => {
     if (loading) {
@@ -50,22 +50,23 @@ export default function App(props) {
 
   function siguienteImagen(num_usuario) {
     enviarDatos(num_usuario)
-    if (imageIndex !== data.length) {
+    if (imageIndex !== data.length - 1) {
       setImageIndex(imageIndex + 1)
       //setNumerosElegidos.p(numeroElegido)
       // numImagen = imageIndex + 1
       setNumeroElegido(null)
-      console.log(data.length, "length")
-      console.log(imageIndex, "imageIndex")
-   
     }
   }
   function enviarDatos(num_usuario) {
 
-    //setNumerosElegidos.push(numeroElegido)
-    console.log("index:", imageIndex+1);
+    //Tiene que recibir 3 parametros
+    //fetch('https://b8af-181-12-251-211.sa.ngrok.io/api/eval-test?usuario=1&imagen_id=4(<== aca hay que concatenar) &num_ing=7(<== aca tmb)'
+    //Tengo que hacer que sean variables. Que cambien segun lo que se lea.
 
-    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex+1}&num_ing=${num_usuario}`, {
+    //setNumerosElegidos.push(numeroElegido)
+    console.log(numeroElegido);
+
+    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex}&num_ing=${num_usuario}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
