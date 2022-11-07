@@ -16,7 +16,7 @@ export default function App(props) {
 
   const numImagen = 0
 
-  const varurl = "https://7571-181-12-251-211.sa.ngrok.io"
+  const varurl = "https://2c05-170-51-132-157.sa.ngrok.io"
 
   useEffect(() => {
     if (loading) {
@@ -66,7 +66,7 @@ export default function App(props) {
     //setNumerosElegidos.push(numeroElegido)
     console.log(numeroElegido);
 
-    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex}&num_ing=${num_usuario}`, {
+    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex+1}&num_ing=${num_usuario}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -120,7 +120,7 @@ export default function App(props) {
                 titulo='Siguiente imagen'
                 onPress={() => siguienteImagen(numeroElegido)} /> : <MyButton
                 titulo='Finalizar'
-                onPress={() => goToScreen('Login')} />
+                onPress={() => goToScreen('Resultados')} />
           }
         </View>
       </ScrollView>
@@ -132,6 +132,7 @@ export default function App(props) {
   )
 
   function goToScreen(routeName) {
+    siguienteImagen(numeroElegido);
     props.navigation.navigate(routeName)
   }
 }
