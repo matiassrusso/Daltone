@@ -1,50 +1,142 @@
-import React, {Component, useState} from 'react'
-import { StatusBar, Text, View, TouchableOpacity, Image } from 'react-native'
-import { mainStyles, loginStyles } from '@styles/styles'
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import MyTextInput from '@components/MyTextInput'
+import MyButton from '@components/MyButton'
 import color from '@styles/Colors'
+import { mainStyles, loginStyles } from '@styles/styles'
 
 
 
-export default function LoginScreen(props){
+export default function App(props) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true)
+  const [imageIndex, setImageIndex] = useState(0)
+  const [numeroElegido, setNumeroElegido] = useState(null)
+  // const [numerosElegidos, setNumerosElegidos] = useState([]);
 
-    function goToScreen(routeName){
-        props.navigation.navigate(routeName)
+  const numImagen = 0
+
+  const varurl = "https://0dcc-181-85-50-196.sa.ngrok.io"
+
+  useEffect(() => {
+    if (loading) {
+
+
+      fetch(`${varurl}/api/show-summary?type=allRecords?usuario=1&profile_id=Noche`)
+        .then(response => response.json())
+        .then((json) => setData(json))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false))
     }
+  }, [loading])
 
-        return(
-            <View style={[mainStyles.container,{paddingTop: 10}]}>
-                <Text style={ [mainStyles.unoText,{fontSize: 53}]}>Resultados Test</Text>
-                {/* <Text style={ [mainStyles.unoText,{bottom:35,fontSize: 53 }]}>DALTONE</Text> */}
+  const loadImage = () => { setLoading(true) }
 
-                <View style={[loginStyles.logo, {bottom:50}]}>
-                {/* <Image source={require('@recursos/images/64943.png')}
-                    style={{ height: 250, width: 250 }} /> */}
-            </View>
-            <Text style={ [mainStyles.unoText,{bottom:80, fontSize: 25}]}>Te ayudaremos a</Text>
-            <Text style={ [mainStyles.unoText,{bottom:120, fontSize: 25}]}> distinguir los colores</Text>
+  //Guardar en una variable el id
 
-        <View style={[mainStyles.otro2Btn, {bottom:100}]}>
-            <TouchableOpacity
-                onPress={() => goToScreen('Register')}>
-                <Text style={mainStyles.dosText}>¿Empezamos?</Text>
-            </TouchableOpacity>
-        </View>
-
-        <View style={[{bottom:60}]}>
-        <Text style={[ {right:70, color:'black', fontSize: 22 }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 27 }, {}]}>¿Ya tenes cuenta?</Text>
-
-            <TouchableOpacity
-          onPress={() => goToScreen('Inicio')}>
-            <Text style={[{ left:89, color: color.LBLUE, fontSize: 22  }, { textDecorationLine: 'underline' }, { textAlign: 'center' }, { paddingTop: 25 }, { bottom: 81.4 }, {}]}>Inicia sesion</Text>
-
-        </TouchableOpacity>
-        </View>
-        
-
-            </View>
-            
-        )
-    
-        
-    
+  //PROBAR ESTE LOOP EN VEZ DEL QUE YA USO
+  /* 
+  (rowData) => {
+    let items = [];
+    for (let i = 1; i <= 5; i++) {
+        const key = 'image' + i;
+        const uri = rowData[key];
+        if (!uri) continue;
+        items.push(<Image key={key} source={{uri: uri}} style={{width: 100, height: 100}} />);      
+    }
+    return <View>{items}</View>
 }
+  */
+
+  function siguienteImagen(num_usuario) {
+    enviarDatos(num_usuario)
+    if (imageIndex !== data.length - 1) {
+      setImageIndex(imageIndex + 1)
+      //setNumerosElegidos.p(numeroElegido)
+      // numImagen = imageIndex + 1
+      setNumeroElegido(null)
+    }
+  }
+  function enviarDatos(num_usuario) {
+    console.log(numeroElegido);
+
+    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex+1}&num_ing=${num_usuario}`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
+    }).then((response) =>
+      response.json()
+    ).then((data) => {
+      // Recibo si contesto bien o no
+      console.log(data);
+    })
+  }
+
+  return (
+
+
+
+
+
+    <View style={[mainStyles.container, {paddingTop:70}]}>
+
+      <ScrollView>
+          <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
+          <StatusBar backgroundColor={color.BLACK} translucent={true} />
+
+          {
+            data.length > 0 &&
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <Image source={{ uri: `data:image/jpg;base64,${data[imageIndex].img_testeo}` }}
+                style={{ width: 100, height: 100 }} />
+            </View>
+
+            //Hacer un if para comparar el numero ingresado con el numero correcto, haciendolo como esta aca arriba.
+
+          }
+          <MyTextInput onChangeText={(text) => setNumeroElegido(text)} keyboardType="number-pad" placeholder='Escriba el numero de arriba' image='user' />
+
+          {/* enviarDatos(setNumeroElegido) */}
+
+         <View style={{ left:25}}>
+          {
+            imageIndex !== data.length - 1 ?
+
+              //1. Guardar el input del numero ingresado
+              //Llamar a la funcion "enviar datos" con 3 parametros: Usuario, ID, numero ingresado
+
+
+              
+              <MyButton
+                titulo='Siguiente imagen'
+                onPress={() => siguienteImagen(numeroElegido)} /> : <MyButton
+                titulo='Finalizar'
+                onPress={() => goToScreen('Resultados')} />
+          }
+          </View>
+
+      </ScrollView>
+      </View>
+
+
+
+
+  )
+
+  function goToScreen(routeName) {
+    siguienteImagen(numeroElegido);
+    props.navigation.navigate(routeName)
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

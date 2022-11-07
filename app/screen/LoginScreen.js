@@ -44,7 +44,7 @@ export default function LoginScreen(props) {
                 </TouchableOpacity>
             </View>
             <View style={mainStyles.btnMVP}>
-                <TouchableOpacity onPress={() => goToScreen('Test2')}>
+                <TouchableOpacity onPress={() => goToScreen('Test')}>
                     <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 14, alignItems: 'center', }]}>Ir al MVP</Text>
                 </TouchableOpacity>
             </View>

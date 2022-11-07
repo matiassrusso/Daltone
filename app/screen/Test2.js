@@ -16,7 +16,7 @@ export default function App(props) {
 
   const numImagen = 0
 
-  const varurl = "https://2c05-170-51-132-157.sa.ngrok.io"
+  const varurl = "https://0dcc-181-85-50-196.sa.ngrok.io"
 
   useEffect(() => {
     if (loading) {
@@ -66,7 +66,7 @@ export default function App(props) {
     //setNumerosElegidos.push(numeroElegido)
     console.log(numeroElegido);
 
-    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex+1}&num_ing=${num_usuario}`, {
+    fetch(`${varurl}/api/eval-test?usuario=1&imagen_id=${imageIndex+1}&num_ing=${num_usuario}&profile_id=Predeterminado`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -87,10 +87,9 @@ export default function App(props) {
 
 
 
-    <SafeAreaView>
+    <View style={[mainStyles.container, {paddingTop:70}]}>
 
       <ScrollView>
-        <View style={[mainStyles.container, { paddingTop:170, paddingBottom: 2000 }]}>
           <Text style={[mainStyles.btntxt, { color: color.BLACK, fontSize: 66, textAlign: 'left' }]}>Evaluacion</Text>
           <StatusBar backgroundColor={color.BLACK} translucent={true} />
 
@@ -108,6 +107,7 @@ export default function App(props) {
 
           {/* enviarDatos(setNumeroElegido) */}
 
+         <View style={{ left:25}}>
           {
             imageIndex !== data.length - 1 ?
 
@@ -115,16 +115,17 @@ export default function App(props) {
               //Llamar a la funcion "enviar datos" con 3 parametros: Usuario, ID, numero ingresado
 
 
-
+              
               <MyButton
                 titulo='Siguiente imagen'
                 onPress={() => siguienteImagen(numeroElegido)} /> : <MyButton
                 titulo='Finalizar'
                 onPress={() => goToScreen('Resultados')} />
           }
-        </View>
+          </View>
+
       </ScrollView>
-    </SafeAreaView>
+      </View>
 
 
 
